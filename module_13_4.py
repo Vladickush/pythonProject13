@@ -8,7 +8,7 @@ from aiogram.dispatcher import FSMContext
 
 import asyncio
 
-api = "7487519575:AAEal-5CylTeImVLBt1zXEWDpfHEuNg1MG4"
+api = ""
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -51,7 +51,7 @@ async def set_gender(message, state):
 async def send_calories(message, state):
     await state.update_data(gender=message.text)
 
-    data = await state.get_data()  # UserState.age,UserState.growth,UserState.weight)
+    data = await state.get_data()  # UserState.age,UserState.growth,UserState.weight,UserState.gender
     age = int(data['age'])
     growth = int(data['growth'])
     weight = int(data['weight'])
